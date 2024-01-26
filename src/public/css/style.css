@@ -1,3 +1,9 @@
 img {
     width: 500px
 }
+
+.form-add-new {
+    width: 500px;
+    margin: 0 auto;
+    padding-top: 100px;
+}
