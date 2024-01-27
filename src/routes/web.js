@@ -5,7 +5,8 @@ const {
     getHomePage,
     postCreateUser,
     getEditUserForm,
-    postEditUserForm
+    postEditUserForm,
+    deleteUser
 } = require('../controllers/homeControllers')
 
 router.get('/home-page', getHomePage)
@@ -15,5 +16,7 @@ router.post('/create-user', postCreateUser)
 
 router.get('/edit/:id', getEditUserForm)
 router.post('/update-user/', postEditUserForm)
+
+router.get('/delete-user/:id', deleteUser)
 
 module.exports = router
