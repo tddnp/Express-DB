@@ -15,6 +15,9 @@ app.use(express.urlencoded({ extended: true }))
 // config view template
 configViewEngine(app)
 
+// db connect
+connection()
+
 // config route
 app.use('/', webRoutes)
 
