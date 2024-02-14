@@ -39,7 +39,8 @@ const connection = async () => {
     try {
         const option = {
             user: process.env.DB_USER,
-            pass: process.env.DB_PASSWORD
+            pass: process.env.DB_PASSWORD,
+            dbName: process.env.DB_NAME
         }
         await mongoose.connect(process.env.DB_HOST, option)
         const state = Number(mongoose.connection.readyState)
