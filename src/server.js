@@ -19,15 +19,6 @@ configViewEngine(app);
 // config route
 app.use('/', webRoutes);
 
-const kittySchema = new mongoose.Schema({
-    name: String
-});
-
-const Kitten = mongoose.model('kitten', kittySchema);
-const silence = new Kitten({ name: 'silence' });
-
-silence.save();
-
 (async () => {
     try {
         await connection()
