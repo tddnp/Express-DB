@@ -13,14 +13,19 @@ app.use(express.json()) // for json
 app.use(express.urlencoded({ extended: true }))
 
 // config view template
-configViewEngine(app)
-
-// db connect
-connection()
+configViewEngine(app);
 
 // config route
-app.use('/', webRoutes)
+app.use('/', webRoutes);
 
-app.listen(port, () => {
-    console.log(`litsening on port ${port}`)
-})
+(async () => {
+    try {
+        await connection()
+        app.listen(port, () => {
+            console.log(`litsening on port ${port}`)
+        })
+    } catch (error) {
+        console.log("err: ", error)
+    }
+})()
+
