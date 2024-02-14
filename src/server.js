@@ -4,6 +4,7 @@ require('dotenv').config()
 const connection = require('./config/dataBase')
 const configViewEngine = require('./config/viewEngine')
 const webRoutes = require('./routes/web')
+const apiRoute = require('./routes/api')
 const mongoose = require('mongoose')
 
 const app = express()
@@ -18,6 +19,7 @@ configViewEngine(app);
 
 // config route
 app.use('/', webRoutes);
+app.use('/v1/api', apiRoute);
 
 (async () => {
     try {
