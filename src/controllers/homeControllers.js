@@ -54,7 +54,8 @@ const postEditUserForm = async (req, res) => {
 
 const deleteUser = async (req, res) => {
     let id = req.params.id
-    await deleteUserFromDB(id)
+    //await deleteUserFromDB(id)
+    await User.deleteOne({ _id: id })
     res.redirect('/home-page')
 }
 
