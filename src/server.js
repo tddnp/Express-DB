@@ -5,10 +5,14 @@ const connection = require('./config/dataBase')
 const configViewEngine = require('./config/viewEngine')
 const webRoutes = require('./routes/web')
 const apiRoute = require('./routes/api')
-const mongoose = require('mongoose')
+//const mongoose = require('mongoose')
+const fileUpload = require('express-fileupload')
 
 const app = express()
 const port = process.env.PORT || 8081
+
+// config file upload
+app.use(fileUpload())
 
 // config
 app.use(express.json()) // for json
